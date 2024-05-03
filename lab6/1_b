@@ -1,0 +1,5 @@
+#!/bin/bash
+n=$1
+for (( i=1; i <= $n; i++ )); do
+	echo "scale=1250;l(sqrt( (1 - s($i)) / (1 + s($i)) ))" | bc -l
+done

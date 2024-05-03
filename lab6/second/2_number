@@ -1,0 +1,8 @@
+#!/bin/bash
+for (( i=1; i <= 20; i++ )); do
+	echo "$i : " >> result_2_2proc_not_wait.log
+	for (( j=0; j < 5; j++ )); do
+		./copy_seq $i
+		{ \time -f "%E" ./2_a $i; } 1>/dev/null 2>>result_2_2proc_not_wait.log
+	done
+done

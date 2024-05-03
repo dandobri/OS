@@ -1,0 +1,7 @@
+#!/bin/bash
+for (( i=1; i <= 20; i++ )); do
+	echo "$i-th data: " >> result2_2proc.log
+	for (( j=0; j < 5; j++ )); do
+		{ \time -f "%E" ./2_a $i; } 1>/dev/null 2>>result2_2proc.log
+	done
+done
